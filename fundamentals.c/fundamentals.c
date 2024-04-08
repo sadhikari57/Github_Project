@@ -67,6 +67,44 @@ void fundamentals(void) {
     // End of the indexing strings demonstration.
     printf("*** End of Indexing Strings Demo ***\n\n");
 
-    
-    //  Version 2 and  3 are left empty for future implementations.
+    // /* Version 2 */
+
+    /*removing the numInput and size_t position variables and its uses and replacing all three variables with one variable
+    called buffer2 and using it in the entire code for better stability in the code */
+
+    // printing the statement to start of our program...
+    printf("* Start of Measuring String Demo *\n");
+
+    // declearing the character arrays named buffer2 with size BUFFER_SIZE.
+    char buffer2[BUFFER_SIZE];
+
+
+    // do-while loop initialized...
+    do
+    {
+        //printing the statement to take a string by using the print function..
+        printf("Type a string (q - to quit):\n");
+
+        // taking the user input of string and storing it in buffer2 by fget function..
+        fgets(buffer2, BUFFER_SIZE, stdin);
+
+        // cutting of the last character of buffer1 and replacing it with the null character...
+        buffer2[strlen(buffer2) - 1] = '\0';
+
+        //if condition initialized ...
+        if (strcmp(buffer2, "q") != 0)
+
+            // if the condition above satisfies then, it prints the below print statement with the help of print function..
+            printf("The length of \'%s\' is %d characters\n",
+                buffer2, (int)strlen(buffer2));
+
+    } while (strcmp(buffer2, "q") != 0);
+
+
+    // last print statement for end of our program..
+    printf("* End of Measuring Strings Demo *\n\n");
 }
+
+    
+    //  Version 3 is left empty for future implementations.
+
